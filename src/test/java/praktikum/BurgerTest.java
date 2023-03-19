@@ -43,7 +43,7 @@ public class BurgerTest {
 
         burger.setBuns(bun);
 
-        assertEquals("'Bun' was successfully applied", bun, burger.bun);
+        assertEquals("'Bun' was not successfully applied", bun, burger.bun);
     }
 
 
@@ -52,7 +52,7 @@ public class BurgerTest {
         Burger burger = new Burger();
         burger.addIngredient(ingredient);
 
-        assertEquals("'Ingredient' was successfully added", singletonList(ingredient), burger.ingredients);
+        assertEquals("'Ingredient' was not successfully added", singletonList(ingredient), burger.ingredients);
     }
 
 
@@ -70,14 +70,14 @@ public class BurgerTest {
         expectedList.remove(1);
         burger.removeIngredient(1);
 
-        assertEquals("Second ingredient was removed", expectedList.size(), actualList.size());
+        assertEquals("Second ingredient was not removed", expectedList.size(), actualList.size());
 
         Ingredient expected = expectedList.get(0);
         Ingredient actual = actualList.get(0);
 
-        assertEquals("Name first ingredient is correct", expected.getName(), actual.getName());
-        assertEquals("Price first ingredient is correct", expected.getPrice(), actual.getPrice(), 0);
-        assertEquals("Type first ingredientis is correct", expected.getType(), actual.getType());
+        assertEquals("Name first ingredient is not correct", expected.getName(), actual.getName());
+        assertEquals("Price first ingredient is not correct", expected.getPrice(), actual.getPrice(), 0);
+        assertEquals("Type first ingredientis is not correct", expected.getType(), actual.getType());
     }
 
 
